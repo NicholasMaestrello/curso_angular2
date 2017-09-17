@@ -27,41 +27,20 @@ function inc (speed: number, inc: number = 1): number {
 console.log(`inc (5, 1) = ${inc(5, 1)}`)
 console.log(`inc (5) = ${inc(5)}`)
 */
-class Spacecraft {
-    constructor (public propulsor: string){}
 
-    jumpIntoHyperspace() {
-        console.log(`Entering hyperspace with ${this.propulsor}`)
-    }
-}
+import {Spacecraft, Containership} from "./base-ships"
+import {Millenniumfalcon} from "./starfighters"
+
+import * as _ from 'lodash'
+console.log(_.pad("Typescript Examples", 40, "="))
 
 let ship = new Spacecraft('Hyperdrive')
 ship.jumpIntoHyperspace()
 
-class Millenniumfalcon extends Spacecraft implements Containership{
-
-    cargoContainer: number
-
-    constructor(){
-        super('Hyperdrive')
-        this.cargoContainer = 2
-    }
-
-    jumpIntoHyperspace(){
-        if (Math.random() >=0.5){
-            super.jumpIntoHyperspace()
-        }else {
-            console.log('Failed to jump to hyperspace')
-        }
-    }
-}
-
 let falcon = new Millenniumfalcon()
 falcon.jumpIntoHyperspace()
 
-interface Containership {
-    cargoContainer: number
-}
+
 
 let goodForTheJob = (ship: Containership) => ship.cargoContainer > 2
 console.log(`Is falcon good for the job ? ${goodForTheJob(falcon) ? 'YES': 'NO'}`)

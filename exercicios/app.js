@@ -1,13 +1,4 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+"use strict";
 /*let message: string = "Help me please"
 console.log(message)
 
@@ -37,35 +28,14 @@ function inc (speed: number, inc: number = 1): number {
 console.log(`inc (5, 1) = ${inc(5, 1)}`)
 console.log(`inc (5) = ${inc(5)}`)
 */
-var Spacecraft = /** @class */ (function () {
-    function Spacecraft(propulsor) {
-        this.propulsor = propulsor;
-    }
-    Spacecraft.prototype.jumpIntoHyperspace = function () {
-        console.log("Entering hyperspace with " + this.propulsor);
-    };
-    return Spacecraft;
-}());
-var ship = new Spacecraft('Hyperdrive');
+exports.__esModule = true;
+var base_ships_1 = require("./base-ships");
+var starfighters_1 = require("./starfighters");
+var _ = require("lodash");
+console.log(_.pad("Typescript Examples", 40, "="));
+var ship = new base_ships_1.Spacecraft('Hyperdrive');
 ship.jumpIntoHyperspace();
-var Millenniumfalcon = /** @class */ (function (_super) {
-    __extends(Millenniumfalcon, _super);
-    function Millenniumfalcon() {
-        var _this = _super.call(this, 'Hyperdrive') || this;
-        _this.cargoContainer = 2;
-        return _this;
-    }
-    Millenniumfalcon.prototype.jumpIntoHyperspace = function () {
-        if (Math.random() >= 0.5) {
-            _super.prototype.jumpIntoHyperspace.call(this);
-        }
-        else {
-            console.log('Failed to jump to hyperspace');
-        }
-    };
-    return Millenniumfalcon;
-}(Spacecraft));
-var falcon = new Millenniumfalcon();
+var falcon = new starfighters_1.Millenniumfalcon();
 falcon.jumpIntoHyperspace();
 var goodForTheJob = function (ship) { return ship.cargoContainer > 2; };
 console.log("Is falcon good for the job ? " + (goodForTheJob(falcon) ? 'YES' : 'NO'));
