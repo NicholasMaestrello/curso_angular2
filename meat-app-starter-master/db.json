@@ -370,5 +370,53 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "address": "12345",
+      "number": "434",
+      "optionalAddress": "asdw",
+      "paymentOption": "DEB",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 1,
+          "menuId": "donut"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "address": "rua maluca",
+      "number": "1234",
+      "optionalAddress": "alto",
+      "paymentOption": "REF",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "zlasagna"
+        },
+        {
+          "quantity": 1,
+          "menuId": "ceasar"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "address": "Padre maluco",
+      "number": "3456",
+      "optionalAddress": "baixo",
+      "paymentOption": "DEB",
+      "orderItems": [
+        {
+          "quantity": 3,
+          "menuId": "ceasar"
+        }
+      ],
+      "id": 3
+    }
+  ]
 }
